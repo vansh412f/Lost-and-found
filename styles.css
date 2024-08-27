@@ -76,3 +76,7 @@ h1.display-4 {
     /* Ensure the modal is hidden by default */
     /* Additional styling if needed */
 }
+.closesignup {
+    color: rgb(0, 0, 0);
+    opacity: 1;
+}
