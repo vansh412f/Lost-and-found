@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lost and Found</title>
+    <script src="login.js" defer type="module"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -28,7 +29,7 @@
 
             <!-- Center Section: Title -->
             <div class="flex-grow-1 text-center">
-                <h1 class="display-4 font-weight-bold mb-0" style="color: aliceblue;">Lost and Found</h1>
+                <h1 class="display-4 font-weight-bold mb-0" style="color: aliceblue;"> Lost and Found</h1>
             </div>
 
             <!-- Right Section: Navbar Links -->
@@ -36,9 +37,6 @@
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link text-white" onclick="showModalSignin()" id="login">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" onclick="showModalSignin()" id="signup">Sign Up</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
@@ -59,36 +57,6 @@
     <div class="container mt-5">
         <div class="row mt-4" id="itemsSection">
             <!-- Example card -->
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Found Item">
-                    <div class="card-body">
-                        <h5 class="card-title">Item Name</h5>
-                        <p class="card-text">Description of the item found on campus. Date: 2024-08-18</p>
-                        <button class="btn btn-success claimBtn stylish-btn">Claim</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Found Item">
-                    <div class="card-body">
-                        <h5 class="card-title">Item Name</h5>
-                        <p class="card-text">Description of the item found on campus. Date: 2024-08-18</p>
-                        <button class="btn btn-success claimBtn stylish-btn">Claim</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Found Item">
-                    <div class="card-body">
-                        <h5 class="card-title">Item Name</h5>
-                        <p class="card-text">Description of the item found on campus. Date: 2024-08-18</p>
-                        <button class="btn btn-success claimBtn stylish-btn">Claim</button>
-                    </div>
-                </div>
-            </div>
             <div class="col-md-4">
                 <div class="card mb-4">
                     <img src="https://via.placeholder.com/150" class="card-img-top" alt="Found Item">
@@ -161,15 +129,14 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="loginSignupModalLabel">Login/Sign Up</h5>
+                    <h5 class="modal-title" id="loginSignupModalLabel">Login</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>Please log in or sign up to use this feature.</p>
+                    <p>Please log in to use this feature.</p>
                     <button class="btn btn-primary stylish-btn" onclick="showModalSignin()">Login</button>
-                    <button class="btn btn-secondary stylish-btn" onclick="showModalSignin()">Sign Up</button>
                 </div>
             </div>
         </div>
@@ -178,10 +145,10 @@
     <div class="modal fade" id="modalSignin" tabindex="-1" aria-labelledby="modalSigninLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content rounded-4 shadow-lg" style="background-color: #343a40; color: white;">
-                <div class="modal-header border-bottom-0">
-                    <h1 class="fw-bold fs-4">Sign Up</h1>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                <div class="modal-header border-bottom-0 ">
+                    <h1 class="fw-bold fs-4 ">Log in</h1>
+                    <button type="button" class="closesignup" data-dismiss="modal" aria-label="Close">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-x-lg" viewBox="0 0 16 16">
                             <path
                                 d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
@@ -189,24 +156,9 @@
                 </div>
                 <div class="modal-body">
                     <form>
-                        <div class="form-floating mb-3">
-                            <input type="email" class="form-control rounded-3 bg-dark text-white border-0" id="floatingInput"
-                                placeholder="name@vitbhopal.ac.in" required>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="password" class="form-control rounded-3 bg-dark text-white border-0" id="floatingPassword"
-                                placeholder="Password" required>
-                        </div>
-                        <button class="w-100 mb-2 btn btn-lg btn-primary rounded-3" type="submit">Sign up</button>
-                        <p class="text-muted text-center mb-3">By clicking Sign up, you agree to the <a href="#" class="text-light">terms
-                                of use</a>.</p>
-                        <hr class="my-4" style="border-color: #495057;">
-                        <h2 class="fs-6 fw-bold mb-3 text-center">Or sign up with</h2>
-                        <button class="w-100 py-2 mb-2 btn btn-outline-light rounded-3" type="button">
-                            Sign up with Google
-                        </button>
-                        <button class="w-100 py-2 mb-2 btn btn-outline-light rounded-3" type="button">
-                            Sign up with GitHub
+                        
+                        <button class="w-100 py-2 mb-2 btn btn-outline-light rounded-3" type="button" id="googleauth">
+                            Log in with Google
                         </button>
                     </form>
                 </div>
@@ -230,11 +182,12 @@
                     <p><strong>Team Members:</strong></p>
                     <ul class="list-unstyled">
                         <li><a style="color: rgb(255, 255, 255);"
-                                href="https://www.instagram.com/vansh412f?igsh=a2RjbndyNGhhejZ3">Vansh - 23BCE10046</a>
-                        </li>
-                        <li><a style="color: rgb(255, 255, 255);"
                                 href="https://www.instagram.com/aryan98787?igsh=YWVuejBxeXhyZ3Yw">Aryan Sharma -
                                 23BAI10633</a></li>
+                        <li><a style="color: rgb(255, 255, 255);"
+                                href="https://www.instagram.com/vansh412f?igsh=a2RjbndyNGhhejZ3">Vansh - 23BCE10046</a>
+                        </li>
+
                     </ul>
                 </div>
 
